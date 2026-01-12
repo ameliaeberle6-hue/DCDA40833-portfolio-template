@@ -1,19 +1,10 @@
-# WRIT 20833 Portfolio Template
-
-**"When Coding Meets Culture: Developing Data-Driven Opinions"**  
-Final Project Web Portfolio Component
+# DCDA 40833 Skills Portfolio Template
 
 ## About This Template
 
-This template is designed specifically for WRIT20833 students completing their final digital humanities research project. It provides a professional web portfolio structure for the **Web Portfolio (HTML/CSS)** deliverable described in the [Final Project Requirements](https://tcu-dcda.github.io/WRIT20833-2025/WRIT20833_Final_Project_Requirements.html).
+This template is designed specifically for DCDA 40833 students completing their final digital humanities research project. It provides a professional web portfolio structure for the **Skills Portfolio (HTML/CSS)** deliverable described in the D2L course shell.
 
 ### Project Context
-
-Your final project explores **what happens when coding meets culture**, integrating:
-- **Term frequency analysis** - Pattern detection in large text datasets
-- **Sentiment analysis (VADER)** - Emotional tone and polarity measurement  
-- **Topic modeling (Gensim)** - Thematic structure discovery
-- **Traditional humanities methods** - Close reading, cultural interpretation, critical reflection
 
 This portfolio template helps you present these integrated findings to public audiences, demonstrating how computational and humanities approaches reveal insights that neither could discover alone.
 
@@ -26,25 +17,11 @@ This portfolio template helps you present these integrated findings to public au
 - ⚡ **[QUICK_START.md](QUICK_START.md)** - Fast reference for content editing (5 minutes)
 - 👨‍🏫 **[INSTRUCTOR_SETUP.md](INSTRUCTOR_SETUP.md)** - For instructors setting up the template
 
-### How Final Project Deliverables Connect to This Portfolio
+### How Weekly Lab Assignments Connect to This Portfolio
 
-| Final Project Component | Portfolio Connection |
-|------------------------|---------------------|
-| **Research Essay** (1500-2000 words) | Portfolio sections mirror essay structure: Research Question, Methods, Findings, Integration & Reflection |
-| **Python Notebooks** (.ipynb files) | Link to your GitHub repository containing Colab notebooks; embed code snippets and visualizations |
-| **Dataset Documentation** (CSV + data biography) | Data & Methods section documents sources, collection ethics, preparation steps |
-| **Web Portfolio** (HTML/CSS) | **This entire template IS your web portfolio deliverable** |
 
 ### Template Workflow
 
-**For Groups (Recommended):**
-1. **Designate one person as repository owner** to create repository from this template
-2. **Owner adds collaborators** (Settings → Collaborators → Add teammates by GitHub username)
-3. **All team members clone using GitHub Desktop** (File → Clone Repository)
-4. **Edit locally in VS Code**, commit, and push changes through GitHub Desktop
-5. **Coordinate sections** to avoid merge conflicts (see Working as a Group section)
-
-**For Individuals:**
 1. Click **"Use this template"** button (green button at top of repository)
 2. Name your repository (e.g., `sentiment-analysis-taylor-swift`)
 3. Make it **Public** (required for GitHub Pages)
@@ -85,15 +62,7 @@ Open `index.html` in your text editor (VS Code recommended) and look for `<!-- T
 
 ### Step 2: Fill in Each Section
 
-Map your research essay content to portfolio sections:
-
-| Portfolio Section | Essay Section | What to Include |
-|------------------|---------------|-----------------|
-| **Research Question** | Overview (100-300 words) + Research Question (200-300 words) | Your question, why it matters, background context, how it evolved from HW5 proposal |
-| **Data & Methods** | Methods (400-800 words) + Dataset Documentation | Data sources, collection methodology, ethical considerations, sample size, preparation process, limitations, tools (Python, VADER, Gensim) |
-| **Results & Analysis** | Findings (300-500 words) | Visualizations from notebooks, code examples demonstrating three base methods, sentiment patterns, topic models, term frequency results |
-| **Key Findings** | Findings (300-500 words) | 3-5 numbered discoveries with supporting data, comparison to initial hypothesis, confidence assessment, gaps that remain |
-| **Critical Reflection** | Integration & Reflection (200-300 words) + Public Presentation Strategy (200-300 words) | How computational and humanities methods integrate, what emerged that close reading alone couldn't reveal, connections to course frameworks, what you'd change, future directions |
+Coming Soon
 
 ### Step 3: Add Your Visualizations
 
