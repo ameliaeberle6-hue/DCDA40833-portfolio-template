@@ -9,11 +9,30 @@
 :root {
     --primary-color: #0d4c28;      /* TCU Purple */
     --secondary-color: #9fd9b6;    /* Light Purple */
-    --accent-color: #000000;       /* Gold accent */
+    --accent-color: #f6c84c;       /* Gold accent */
     --text-color: #333;            /* Dark gray for text */
     --text-secondary: #062c60;     /* Lighter gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
+    --surface-color: #ffffff;      /* Cards / section background */
+    --card-border-color: #e2e8f0;  /* Card border */
+    --muted-bg: #f8f9fa;           /* table stripe / muted */
+    --code-inline-bg: #f4f4f4;     /* inline code bg */
+    --footer-bg: #333;             /* footer background */
     --white: #ffffff;
+}
+
+/* Dark mode variables applied when `body` has class `dark` */
+body.dark {
+    --bg-color: #0b1020;
+    --surface-color: #0f1724;
+    --text-color: #e6eef7;
+    --text-secondary: #9fb4c9;
+    --card-border-color: #1f2937;
+    --muted-bg: #0b1220;
+    --code-inline-bg: #15202a;
+    --footer-bg: #05060a;
+    --primary-color: #9fd9b6;
+    --accent-color: #f6c84c;
 }
 
 /* =========================
@@ -95,6 +114,45 @@ nav a {
     border-radius: 4px;
 }
 
+/* Theme toggle button in nav (matches nav links) */
+nav button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    margin-left: 0.75rem;
+    cursor: pointer;
+}
+
+nav button:hover { background-color: rgba(255,255,255,0.04); }
+
+/* Decorative star frame applied around photos */
+.star-frame {
+    display: inline-block;
+    position: relative;
+    padding: 1.6rem; /* space between image and stars (increased) */
+    border-radius: 12px;
+    background-color: transparent;
+    color: var(--accent-color); /* star color via currentColor in SVG */
+    /* Four star SVGs positioned at the corners */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f6c84c' d='M12 .587l3.668 7.431 8.2 1.191-5.934 5.787 1.402 8.177L12 18.897 4.664 23.173l1.402-8.177L.132 9.209l8.2-1.191z'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f6c84c' d='M12 .587l3.668 7.431 8.2 1.191-5.934 5.787 1.402 8.177L12 18.897 4.664 23.173l1.402-8.177L.132 9.209l8.2-1.191z'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f6c84c' d='M12 .587l3.668 7.431 8.2 1.191-5.934 5.787 1.402 8.177L12 18.897 4.664 23.173l1.402-8.177L.132 9.209l8.2-1.191z'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f6c84c' d='M12 .587l3.668 7.431 8.2 1.191-5.934 5.787 1.402 8.177L12 18.897 4.664 23.173l1.402-8.177L.132 9.209l8.2-1.191z'/></svg>");
+    background-position: left top, right top, left bottom, right bottom;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+}
+
+.star-frame img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+
+/* Make stars more visible in dark mode */
+body.dark .star-frame { color: var(--accent-color); }
+
 nav a:hover {
     background-color: var(--primary-color);
 }
@@ -111,7 +169,7 @@ main {
 
 /* All sections inside main get consistent styling */
 main section {
-    background-color: white;
+    background-color: var(--surface-color);
     padding: 2rem;
     margin-bottom: 2rem;       /* Space between sections */
     border-radius: 8px;        /* Rounded corners */
@@ -206,7 +264,7 @@ code {
 
 /* Inline code (inside paragraphs) */
 p code, li code {
-    background: #f4f4f4;
+    background: var(--code-inline-bg);
     color: #c7254e;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
@@ -236,7 +294,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background: white;
+    background: var(--surface-color);
 }
 
 th, td {
@@ -252,7 +310,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background: #f8f9fa;
+    background: var(--muted-bg);
 }
 
 .results-table {
@@ -310,8 +368,8 @@ tr:nth-child(even) {
 /* Individual portfolio card styling */
 .portfolio-card {
     display: block;
-    background: white;
-    border: 2px solid #e2e8f0;
+    background: var(--surface-color);
+    border: 2px solid var(--card-border-color);
     border-radius: 12px;
     padding: 1.5rem;
     text-decoration: none;
@@ -356,8 +414,8 @@ tr:nth-child(even) {
    Footer (semantic tag)
    ========================= */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;

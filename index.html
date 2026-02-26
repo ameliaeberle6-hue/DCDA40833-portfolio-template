@@ -20,6 +20,7 @@
             <li><a href="hometown-map.html">Hometown Map</a></li>
             <a href="lab02.html">Lab 2: AI Evaluation</a>
         </ul>
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙 Dark</button>
     </nav>
 
     <!-- Header: Your name and course info -->
@@ -116,5 +117,58 @@
         <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
         <p>&copy; 2026 Your Name | DCDA 40833 | TCU</p>
     </footer>
+        <script>
+            (function() {
+                const toggle = document.getElementById('theme-toggle');
+                if (!toggle) return;
+                # if there’s no toggle, just stop 
+                const root = document.body;
+                const stored = localStorage.getItem('theme');
+                # see if the user already picked a theme
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                # check if user prefers dark mode by default
+                const initial = stored ? stored : (prefersDark ? 'dark' : 'light');
+                if (initial === 'dark') root.classList.add('dark');
+                # apply dark mode class if needed
+
+                function updateButton() {
+                    const isDark = root.classList.contains('dark');
+                    toggle.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+                    # update button emoji & text
+                    toggle.setAttribute('aria-pressed', isDark);
+                    
+                }
+
+                updateButton();
+
+                toggle.addEventListener('click', () => {
+                    root.classList.toggle('dark');
+                    # switch theme when clicked
+                    const isDark = root.classList.contains('dark');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    updateButton();
+                });
+
+                // Wrap photos in a decorative star frame
+                function wrapPhotos() {
+                    const imgs = document.querySelectorAll('main img');
+                    imgs.forEach(img => {
+                        if (!img || img.closest('.star-frame')) return;
+                        const wrapper = document.createElement('span');
+                        wrapper.className = 'star-frame';
+                        // Preserve width/height attributes if present
+                        if (img.width) wrapper.style.width = img.width + 'px';
+                        if (img.height) wrapper.style.height = img.height + 'px';
+                        img.parentNode.insertBefore(wrapper, img);
+                        wrapper.appendChild(img);
+                    });
+                }
+# run wrapping after page loads + if images added later
+                // Run after initial load and also on DOM changes (images added later)
+                document.addEventListener('DOMContentLoaded', wrapPhotos);
+                // In case script runs after DOMContentLoaded
+                wrapPhotos();
+            })();
+        </script>
 </body>
 </html>
