@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e3435797af4ecb88889bae4460c633ce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e3435797af4ecb88889bae4460c633ce" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e3435797af4ecb88889bae4460c633ce = L.map(
+                "map_e3435797af4ecb88889bae4460c633ce",
+                {
+                    center: [34.047464, -84.342322],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cd747b990e686af8d6f9e2a88d5447ff = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidGN1bWlhIiwiYSI6ImNtbWswMjMyczFrdmYycXBzY2s0cnF1aW4ifQ.uqEFIT3h0FfuzMZLNHKYKA",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Mapbox",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cd747b990e686af8d6f9e2a88d5447ff.addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var marker_4356cf886670a1ac7235231dabd9c001 = L.marker(
+                [34.047464, -84.342322],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_40d5be59337851e7422ca21dc2710b8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_501cea3b23234d7de00d705f69e65f5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_316d092af93dd28cd9e22c06be8b7741 = $(`<div id="html_316d092af93dd28cd9e22c06be8b7741" style="width: 100.0%; height: 100.0%;">     <h4>Zest Sushi & Small Plates</h4>     <p>Zest has always been one of my favorite places to go to dinner growing up. I associate it with family nights out in downtown Roswell and spending time with friends.</p>     <img src="https://images.otstatic.com/prod/25814999/1/large.jpg" width="200">     </div>`)[0];
+                popup_501cea3b23234d7de00d705f69e65f5c.setContent(html_316d092af93dd28cd9e22c06be8b7741);
+            
+        
+
+        marker_4356cf886670a1ac7235231dabd9c001.bindPopup(popup_501cea3b23234d7de00d705f69e65f5c)
+        ;
+
+        
+    
+    
+                marker_4356cf886670a1ac7235231dabd9c001.setIcon(icon_40d5be59337851e7422ca21dc2710b8d);
+            
+    
+            var marker_a7180fcf6d7988974a3887a62a97ac32 = L.marker(
+                [34.030339, -84.361416],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_db46ab25885e8f117005e8106df7d39f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0dc9dc2fbad39c43a72f3d55b76a90de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a4e5e95e063a413adce587d97d3769e = $(`<div id="html_1a4e5e95e063a413adce587d97d3769e" style="width: 100.0%; height: 100.0%;">     <h4>Gracious Plenty</h4>     <p>Gracious Plenty has the best breakfast and that makes Roswell feel like home to me. It’s a place I think of when I picture late start wednesdays ing highschool with my mom.</p>     <img src="https://photos.bringfido.com/posted/2021/05/16/outside.jpg?size=slide&density=2x" width="200">     </div>`)[0];
+                popup_0dc9dc2fbad39c43a72f3d55b76a90de.setContent(html_1a4e5e95e063a413adce587d97d3769e);
+            
+        
+
+        marker_a7180fcf6d7988974a3887a62a97ac32.bindPopup(popup_0dc9dc2fbad39c43a72f3d55b76a90de)
+        ;
+
+        
+    
+    
+                marker_a7180fcf6d7988974a3887a62a97ac32.setIcon(icon_db46ab25885e8f117005e8106df7d39f);
+            
+    
+            var marker_433ccccc6d50a81dc0a75bf3175db92a = L.marker(
+                [34.03831, -84.36384],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_2301d3010a2ffc44599ed4f090e1f577 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1bddf3785dbc90df6515e9238ca503b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5646d1727cfefb597a3ab55d323b23a = $(`<div id="html_d5646d1727cfefb597a3ab55d323b23a" style="width: 100.0%; height: 100.0%;">     <h4>Roswell Soccer Fields (RASA)</h4>     <p>The Roswell soccer fields were a big part of my life growing up. i grew up playing on these fields</p>     <img src="https://roswell365.com/wp-content/uploads/sites/roswell365.com/images/2023/02/woodstock-soccer-complex-roswell-ga.jpeg" width="200">     </div>`)[0];
+                popup_1bddf3785dbc90df6515e9238ca503b2.setContent(html_d5646d1727cfefb597a3ab55d323b23a);
+            
+        
+
+        marker_433ccccc6d50a81dc0a75bf3175db92a.bindPopup(popup_1bddf3785dbc90df6515e9238ca503b2)
+        ;
+
+        
+    
+    
+                marker_433ccccc6d50a81dc0a75bf3175db92a.setIcon(icon_2301d3010a2ffc44599ed4f090e1f577);
+            
+    
+            var marker_5918cc21ba0742f2890294216be9f7f4 = L.marker(
+                [34.028776, -84.361451],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_0320e70adf6b7b5183340234acc1a5d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5089fff60d4930d4df750fcfdba6142a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05552d3731e6f4248323e3972e9cf98a = $(`<div id="html_05552d3731e6f4248323e3972e9cf98a" style="width: 100.0%; height: 100.0%;">     <h4>Downtown Roswell Historic District</h4>     <p>Downtown Roswell has always been the center of the community for me. I associate it with walking around, eating out, and attending local events with friends and family. we have an event called alive after 5 each month where the street is closed off and the community comes and mingles</p>     <img src="https://exploregeorgia.org/sites/default/files/2020-12/downtown-roswell-credit-benjamingalland.jpg" width="200">     </div>`)[0];
+                popup_5089fff60d4930d4df750fcfdba6142a.setContent(html_05552d3731e6f4248323e3972e9cf98a);
+            
+        
+
+        marker_5918cc21ba0742f2890294216be9f7f4.bindPopup(popup_5089fff60d4930d4df750fcfdba6142a)
+        ;
+
+        
+    
+    
+                marker_5918cc21ba0742f2890294216be9f7f4.setIcon(icon_0320e70adf6b7b5183340234acc1a5d8);
+            
+    
+            var marker_365d310c86577b8880e5a25c8ad1d077 = L.marker(
+                [34.013394, -84.358809],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_7bdd347cc3885fb2e7a8df88f66af9e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f9c8475ec960c14d329b4aa2b725583 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6450a533ff20860b36387810340bc0ab = $(`<div id="html_6450a533ff20860b36387810340bc0ab" style="width: 100.0%; height: 100.0%;">     <h4>Roswell Mill</h4>     <p>Roswell Mill is a place i visit almot every time i go home for walks and outdoor time. It combines local history with nature in a very Roswell way.</p>     <img src="https://elenaphotoart.com/wp-content/uploads/2024/09/roswell-mill-waterfall-swimming-summer.jpg" width="200">     </div>`)[0];
+                popup_6f9c8475ec960c14d329b4aa2b725583.setContent(html_6450a533ff20860b36387810340bc0ab);
+            
+        
+
+        marker_365d310c86577b8880e5a25c8ad1d077.bindPopup(popup_6f9c8475ec960c14d329b4aa2b725583)
+        ;
+
+        
+    
+    
+                marker_365d310c86577b8880e5a25c8ad1d077.setIcon(icon_7bdd347cc3885fb2e7a8df88f66af9e6);
+            
+    
+            var marker_d037a07e8fb668b2823f93325d7abf4d = L.marker(
+                [34.013394, -84.358809],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_0a9b34238b4ac88d3edd0cd4a53b2ba9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5b2bdca28d31c0ffdce18cfd532a17c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9f8997136536a7241d8f8d46ae63eced = $(`<div id="html_9f8997136536a7241d8f8d46ae63eced" style="width: 100.0%; height: 100.0%;">     <h4>Old Mill Park</h4>     <p>Old Mill Park is one of my favorite places to meet up with friends and do something active. I had lots of soccer practices here growing up, so it has a sense of nostlgia for me.</p>     <img src="https://www.atlantaareaparks.com/wp-content/uploads/Old-Mill-Park-Fulton-Roswell-Covered-bridge-2.jpg" width="200">     </div>`)[0];
+                popup_a5b2bdca28d31c0ffdce18cfd532a17c.setContent(html_9f8997136536a7241d8f8d46ae63eced);
+            
+        
+
+        marker_d037a07e8fb668b2823f93325d7abf4d.bindPopup(popup_a5b2bdca28d31c0ffdce18cfd532a17c)
+        ;
+
+        
+    
+    
+                marker_d037a07e8fb668b2823f93325d7abf4d.setIcon(icon_0a9b34238b4ac88d3edd0cd4a53b2ba9);
+            
+    
+            var marker_9a3aa702b5973694158fcb6f882cda62 = L.marker(
+                [34.00435, -84.38265],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_ebee6da104111fc877623950b0a887ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b663cb8f3d9ae828ef4c5b2d52aa54d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c6632ea4313bd21917609108787944e = $(`<div id="html_7c6632ea4313bd21917609108787944e" style="width: 100.0%; height: 100.0%;">     <h4>Chattahoochee Nature Center</h4>     <p>The Chattahoochee Nature Center is meaningful to me because my grandparents used to take me here every weekednd when i was little. its a great way to see nature and get outdoors.</p>     <img src="https://www.atlantaparent.com/wp-content/uploads/2021/05/IMG_0219-1024x683.jpg" width="200">     </div>`)[0];
+                popup_6b663cb8f3d9ae828ef4c5b2d52aa54d.setContent(html_7c6632ea4313bd21917609108787944e);
+            
+        
+
+        marker_9a3aa702b5973694158fcb6f882cda62.bindPopup(popup_6b663cb8f3d9ae828ef4c5b2d52aa54d)
+        ;
+
+        
+    
+    
+                marker_9a3aa702b5973694158fcb6f882cda62.setIcon(icon_ebee6da104111fc877623950b0a887ce);
+            
+    
+            var marker_5b1bc58287c4d2fd6f10009512978e01 = L.marker(
+                [34.03831, -84.36384],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_3c162e40cd03c52cb47cd580992876be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c11137ae2ef76cd7f927ae176b590228 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8dcf0cd44034920e96b92f7e2dc94e5 = $(`<div id="html_c8dcf0cd44034920e96b92f7e2dc94e5" style="width: 100.0%; height: 100.0%;">     <h4>Roswell Area Park</h4>     <p>Roswell Area Park is another place i grew up playing soccer.  this park is always packed with people walking, running, biking, and being social.</p>     <img src="https://www.atlantaareaparks.com/wp-content/uploads/2020/11/Riverside-Park-Fulton-Roswell-Playground-on-east-side-of-the-park-1024x576.jpg" width="200">     </div>`)[0];
+                popup_c11137ae2ef76cd7f927ae176b590228.setContent(html_c8dcf0cd44034920e96b92f7e2dc94e5);
+            
+        
+
+        marker_5b1bc58287c4d2fd6f10009512978e01.bindPopup(popup_c11137ae2ef76cd7f927ae176b590228)
+        ;
+
+        
+    
+    
+                marker_5b1bc58287c4d2fd6f10009512978e01.setIcon(icon_3c162e40cd03c52cb47cd580992876be);
+            
+    
+            var marker_a126bf4cd42d55b356be39445dda36ea = L.marker(
+                [34.063254, -84.408386],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_b3e5b9fb7e7cdf95af5a1bcf8e5f4dbc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3b9ba7b8b2e3e1781c5cb37cde5004c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5f59549375d2424b2c891dd06690b246 = $(`<div id="html_5f59549375d2424b2c891dd06690b246" style="width: 100.0%; height: 100.0%;">     <h4>Leita Thompson Memorial Park</h4>     <p>This park is where my firend sand i go to watch the sunset! these were some of my favorite highschoool memories before we graduated.</p>     <img src="https://www.atlantaoutdoorclub.com/image/events/6674.jpg" width="200">     </div>`)[0];
+                popup_3b9ba7b8b2e3e1781c5cb37cde5004c2.setContent(html_5f59549375d2424b2c891dd06690b246);
+            
+        
+
+        marker_a126bf4cd42d55b356be39445dda36ea.bindPopup(popup_3b9ba7b8b2e3e1781c5cb37cde5004c2)
+        ;
+
+        
+    
+    
+                marker_a126bf4cd42d55b356be39445dda36ea.setIcon(icon_b3e5b9fb7e7cdf95af5a1bcf8e5f4dbc);
+            
+    
+            var marker_bc4f39842819db07171296fa09ccc106 = L.marker(
+                [34.023512, -84.357868],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_568f58db1c7d01db2c8baba23c4b8dde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da7d31f7b108eb21608ef8e1de3d4da3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec5764ae7ea7dbcf77c2700b98bf6fbd = $(`<div id="html_ec5764ae7ea7dbcf77c2700b98bf6fbd" style="width: 100.0%; height: 100.0%;">     <h4>Roswell Cultural Arts Center</h4>     <p>The Roswell Cultural Arts Center represents the creative side of me. It brings people together for art, music, and performances.</p>     <img src="https://s3-media0.fl.yelpcdn.com/bphoto/cZfdYy9EuC_t70SSm0sUqw/348s.jpg" width="200">     </div>`)[0];
+                popup_da7d31f7b108eb21608ef8e1de3d4da3.setContent(html_ec5764ae7ea7dbcf77c2700b98bf6fbd);
+            
+        
+
+        marker_bc4f39842819db07171296fa09ccc106.bindPopup(popup_da7d31f7b108eb21608ef8e1de3d4da3)
+        ;
+
+        
+    
+    
+                marker_bc4f39842819db07171296fa09ccc106.setIcon(icon_568f58db1c7d01db2c8baba23c4b8dde);
+            
+    
+            var marker_cc5640e880a33d18d18fe243a634cea6 = L.marker(
+                [34.023392, -84.361566],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_7b667afcce6a79a818fa8fe34db0acc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2337bc2211c86269c01e93a6f204a39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_877fdab681340dcf51e5c6f25822d58e = $(`<div id="html_877fdab681340dcf51e5c6f25822d58e" style="width: 100.0%; height: 100.0%;">     <h4>Canton Street Social</h4>     <p>Canton Street Social is a place where everyone goes to socialize downtown.one of my family friends own it so I spents lots of time here.</p>     <img src="https://s3-media0.fl.yelpcdn.com/bphoto/oTzj9xC_4tVONxMQWbja7A/348s.jpg" width="200">     </div>`)[0];
+                popup_b2337bc2211c86269c01e93a6f204a39.setContent(html_877fdab681340dcf51e5c6f25822d58e);
+            
+        
+
+        marker_cc5640e880a33d18d18fe243a634cea6.bindPopup(popup_b2337bc2211c86269c01e93a6f204a39)
+        ;
+
+        
+    
+    
+                marker_cc5640e880a33d18d18fe243a634cea6.setIcon(icon_7b667afcce6a79a818fa8fe34db0acc9);
+            
+    
+            var marker_763a6e3d657384dae8926df8d121ef6d = L.marker(
+                [34.02377, -84.362073],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_e633e4362ebdc47c3c84cb3504c287b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8183d9f75676e53ced18b6e0d0d75e41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bce199179e32a2c57c36ba8a74de4811 = $(`<div id="html_bce199179e32a2c57c36ba8a74de4811" style="width: 100.0%; height: 100.0%;">     <h4>Gate City Brewing Company</h4>     <p>Gate City Brewing Company is a great bar in Roswell. It is a massive building that is always packed.</p>     <img src="https://static.wixstatic.com/media/659ff0_d3bd6e26beb94acba85b16f2424f93e0~mv2.jpg/v1/fill/w_320,h_213,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/659ff0_d3bd6e26beb94acba85b16f2424f93e0~mv2.jpg" width="200">     </div>`)[0];
+                popup_8183d9f75676e53ced18b6e0d0d75e41.setContent(html_bce199179e32a2c57c36ba8a74de4811);
+            
+        
+
+        marker_763a6e3d657384dae8926df8d121ef6d.bindPopup(popup_8183d9f75676e53ced18b6e0d0d75e41)
+        ;
+
+        
+    
+    
+                marker_763a6e3d657384dae8926df8d121ef6d.setIcon(icon_e633e4362ebdc47c3c84cb3504c287b4);
+            
+    
+            var marker_82c285877fc22f30303ab36a4b6df033 = L.marker(
+                [34.025095, -84.357868],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_9cc86b8d6def568c11816587647132d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d74dd2c394ef04b1015be890681b952 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f97eb3a51cb24820c7e29f5a725e714e = $(`<div id="html_f97eb3a51cb24820c7e29f5a725e714e" style="width: 100.0%; height: 100.0%;">     <h4>Roswell Library</h4>     <p>The Roswell Library is a place I went a lot when i was younger with my nanny. we would always get icecream and then go to the library. great nostalgic memories.</p>     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyjcqiDv3vkHZpmZwJT9Ong-KcbD4B9Pv8kg&s" width="200">     </div>`)[0];
+                popup_1d74dd2c394ef04b1015be890681b952.setContent(html_f97eb3a51cb24820c7e29f5a725e714e);
+            
+        
+
+        marker_82c285877fc22f30303ab36a4b6df033.bindPopup(popup_1d74dd2c394ef04b1015be890681b952)
+        ;
+
+        
+    
+    
+                marker_82c285877fc22f30303ab36a4b6df033.setIcon(icon_9cc86b8d6def568c11816587647132d6);
+            
+    
+            var marker_50f4928d7981a51e48c8cbb35d66e3d5 = L.marker(
+                [34.023212, -84.361557],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_752c9b39d463e50f73cccc0401bc27c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2cf83f84cddccf513c0c516d24c7c2f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48de2219294b93d911f263c5c4d707ea = $(`<div id="html_48de2219294b93d911f263c5c4d707ea" style="width: 100.0%; height: 100.0%;">     <h4>Sweet Apple Elementary School</h4>     <p>Sweet Apple Elementary was my kidergarten but i only went here for a year. more than school, there were always events being hosted here and it was so walkable from my old house.</p>     <img src="https://images.squarespace-cdn.com/content/v1/5f244f69b563dc47b269159b/1600433339452-62L987X2A4JARL2C8Z57/school.jpg" width="200">     </div>`)[0];
+                popup_2cf83f84cddccf513c0c516d24c7c2f1.setContent(html_48de2219294b93d911f263c5c4d707ea);
+            
+        
+
+        marker_50f4928d7981a51e48c8cbb35d66e3d5.bindPopup(popup_2cf83f84cddccf513c0c516d24c7c2f1)
+        ;
+
+        
+    
+    
+                marker_50f4928d7981a51e48c8cbb35d66e3d5.setIcon(icon_752c9b39d463e50f73cccc0401bc27c9);
+            
+    
+            var marker_b8b0f915a131995182fedcdda81c77f3 = L.marker(
+                [34.001574, -84.29417],
+                {
+}
+            ).addTo(map_e3435797af4ecb88889bae4460c633ce);
+        
+    
+            var icon_1d82ef1ddfeb067e118435f9b9321822 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82dad7b4e7fe607bfd43a3fb49144de0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1efed80f70dffb063f7827882aec08ec = $(`<div id="html_1efed80f70dffb063f7827882aec08ec" style="width: 100.0%; height: 100.0%;">     <h4>East Roswell Park</h4>     <p>East Roswell Park is where we practiced when we won states in soccer! these paractices and games will forever be memories i am greatful for.</p>     <img src="https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.atlantaareaparks.com%2Fparks%2Feast-roswell-park%2F&ved=0CBYQjRxqFwoTCJicj4-3lJMDFQAAAAAdAAAAABAI&opi=89978449" width="200">     </div>`)[0];
+                popup_82dad7b4e7fe607bfd43a3fb49144de0.setContent(html_1efed80f70dffb063f7827882aec08ec);
+            
+        
+
+        marker_b8b0f915a131995182fedcdda81c77f3.bindPopup(popup_82dad7b4e7fe607bfd43a3fb49144de0)
+        ;
+
+        
+    
+    
+                marker_b8b0f915a131995182fedcdda81c77f3.setIcon(icon_1d82ef1ddfeb067e118435f9b9321822);
+            
+</script>
+</html>
