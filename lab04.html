@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 4 — Tableau Visualization</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <main class="container">
+    <header>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <img src="images/profile.jpg" alt="Profile" style="width:72px;height:72px;border-radius:8px;object-fit:cover">
+        <div>
+          <h1>Lab 4 — Tableau Public Visualization</h1>
+          <p>Dataset: <strong>fifa_ranking.csv</strong> (separate from hometown dataset)</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="embed">
+      <h2>Tableau Visualization (Embed)</h2>
+      <p>Replace the <em>src</em> URL in the iframe below with your Tableau Public workbook embed URL once you publish it to Tableau Public. Example embed code:</p>
+
+      <!-- Placeholder iframe: replace the src value with your workbook's embed URL -->
+      <div class="viz-container">
+        <iframe src="https://public.tableau.com/views/YOUR_WORKBOOK_NAME/YOUR_SHEET_NAME?:showVizHome=no&:embed=true"
+                width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <p>If you do not yet have a published workbook, publish from Tableau Desktop or Tableau Public web authoring and paste the iframe here.</p>
+    </section>
+
+    <section id="reflection">
+      <h2>Reflection — Data Preparation, Design, and Findings</h2>
+
+      <p>This project used the <strong>hometown_locations - Sheet1.csv</strong> dataset: a list of places from my hometown with names, addresses, category/type, short personal descriptions, and image URLs. The dataset is primarily categorical and textual; there are no native numeric measures, and the fields require a bit of cleanup before a smooth Tableau Public import.</p>
+
+      <p><strong>Data preparation challenges</strong>: The CSV contained inconsistent quoting and delimiter placement which prevents reliable parsing by Tableau. Some rows had mis-placed quote characters, missing commas before the image URL, and inconsistent use of whitespace. Category labels had inconsistent capitalization (e.g., "Cultural" vs " Cultural"). Addresses include commas inside the field which is fine if quoting is correct, but in this file the quotes are inconsistent. Because Tableau expects a well-formed CSV or Excel file, I cleaned the file by: (1) normalizing quotes; (2) ensuring five columns with headers: Name, Address, Category, Description, ImageURL; (3) trimming whitespace and fixing obvious typos; (4) optionally adding Latitude and Longitude columns by geocoding addresses for reliable mapping in Tableau.</p>
+
+      <p><strong>Design choices and reasoning</strong>: For this dataset I focused on two complementary visualization approaches: a symbol map and a category-count bar chart. The symbol map (using geocoded coordinates or Tableau's built-in geocoding if you extract City/State/Zip) best reveals spatial clustering, showing where parks, restaurants, and cultural sites concentrate. The bar chart of counts per category (Restaurant, Park, Historical, Cultural, School, Recreation) quickly surfaces dominant types and helps spot underrepresented categories. I also used short description length as a small numeric proxy (description word count) to highlight unusually long or short entries — useful to flag outliers or entries that might contain multiple locations mashed together.</p>
+
+      <p><strong>Expected patterns</strong>: I expected restaurants and cultural locations to cluster around downtown Roswell (Canton St), parks to be more spread out near green spaces and the river, and historical sites to be near the Roswell Mill area. I also expected duplicate or near-duplicate addresses for sites that share the same location (e.g., Roswell Mill and Old Mill Park both listing 95 Mill St).</p>
+
+      <p><strong>Surprises and outliers</strong>: Malformed rows and missing commas were the biggest surprise — these are not data insights but data-quality obstacles. In the cleaned visualization, outliers to look for include locations geocoded outside the expected city bounds (signaling an address parsing problem), categories with a single item, or descriptions that include extra URLs stuck to text (those indicate missing separators).</p>
+
+      <p><strong>Questions for further investigation</strong>: Why do some categories cluster more than others? Are certain types of places (e.g., parks) consistently located near rivers or trails? Do description sentiments vary by category (could do a simple sentiment score on descriptions)?</p>
+
+      <p><strong>Evaluation of Tableau Public</strong>: Tableau Public excels at quick spatial and categorical exploration with minimal code; it provides strong mapping and drag-and-drop chart building, which is ideal for this dataset. Limitations: sensitive to malformed CSVs, less flexible for advanced text-cleaning (preprocessing outside Tableau is recommended), and requires careful geocoding for precise mapping if addresses are full street addresses. Overall, Tableau Public is excellent for rapid prototyping and sharing interactive visuals for a portfolio.</p>
+
+      <p><em>Notes:</em> After publishing your workbook, update the iframe <em>src</em> above with the embed URL from Tableau Public, then save this page; the visualization will appear on the portfolio page.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portfolio</p>
+  </footer>
+</body>
+</html>

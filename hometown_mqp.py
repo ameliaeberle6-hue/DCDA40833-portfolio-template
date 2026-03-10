@@ -8,9 +8,24 @@ import os
 # ----------------------------
 # CONFIG
 # ----------------------------
-MAPBOX_TOKEN = "pk.eyJ1IjoidGN1bWlhIiwiYSI6ImNtbWswMjMyczFrdmYycXBzY2s0cnF1aW4ifQ.uqEFIT3h0FfuzMZLNHKYKA"
+# Mapbox token: you can keep it here or set MAPBOX_TOKEN in your environment
+MAPBOX_TOKEN = os.getenv('MAPBOX_TOKEN', "pk.eyJ1IjoidGN1bWlhIiwiYSI6ImNtbWswMjMyczFrdmYycXBzY2s0cnF1aW4ifQ.uqEFIT3h0FfuzMZLNHKYKA")
 
-MAPBOX_TILES = f"https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{{z}}/{{x}}/{{y}}@2x?access_token={MAPBOX_TOKEN}"
+# Customize these with your Mapbox username and style ID from Mapbox Studio.
+# Example: MAPBOX_USERNAME = 'your_username', MAPBOX_STYLE_ID = 'ckxyzabc12345...'
+# Set your Mapbox username and style ID here (provided):
+MAPBOX_USERNAME = os.getenv('MAPBOX_USERNAME', 'tcumia')
+# If you copied the style URL (mapbox://styles/tcumia/cmmk04hf4004901qua6oc75jc),
+# the style id is the last part after the final '/'
+MAPBOX_STYLE_ID = os.getenv('MAPBOX_STYLE_ID', 'cmmk04hf4004901qua6oc75jc')
+
+if MAPBOX_USERNAME and MAPBOX_STYLE_ID:
+    MAPBOX_TILES = f"https://api.mapbox.com/styles/v1/{MAPBOX_USERNAME}/{MAPBOX_STYLE_ID}/tiles/256/{{z}}/{{x}}/{{y}}@2x?access_token={MAPBOX_TOKEN}"
+else:
+    # fallback to Mapbox default streets style
+    MAPBOX_TILES = f"https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{{z}}/{{x}}/{{y}}@2x?access_token={MAPBOX_TOKEN}"
+
+print('Using Mapbox tiles:', MAPBOX_TILES.split('?')[0])
 
 # ----------------------------
 # READ CSV (custom parser for provided file format)
