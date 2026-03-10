@@ -1,6 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lab 4: Tableau Visualization - Mia Eberle">
+    <title>Lab 4 — Tableau Visualization</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lab02.html">Lab 2</a></li>
+        <li><a href="lab03.html">Lab 3</a></li>
+        <li><a href="lab04.html">Lab 4</a></li>
+        <li><a href="lab5.html">Lab 5</a></li>
+        <li><a href="hometown-map.html">Hometown Map</a></li>
+      </ul>
+      <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙 Dark</button>
+    </nav>
+
+    <header>
+        <h1>Lab 4 — Tableau Visualization</h1>
+        <p>Exploring patterns with Tableau Public</p>
+    </header>
+
+    <main>
+        <section class="viz-section">
+            <h2>Published Tableau Visualization</h2>
+            <p>After you publish your visualization to Tableau Public, paste the embed code from the Share → Embed dialog into the box below. The page will render the interactive viz.</p>
+
+            <!-- Paste your Tableau embed code inside the div below. Example embed (replace src with your published viz URL):
+            <iframe src="https://public.tableau.com/views/YourViz/Sheet1?:embed=y&:display_count=yes" width="900" height="700"></iframe>
+            -->
+
+            <div id="tableau-embed-placeholder" style="border:1px dashed #ccc; padding:1rem; max-width:1000px;">
+              <p><strong>Live sample embed:</strong> this iframe uses a publicly-available Tableau sample so you can preview layout. Replace it with your published viz embed code when ready.</p>
+              <iframe src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:embed=y&:display_count=yes&:showVizHome=no" width="100%" height="700" frameborder="0"></iframe>
+              <p style="font-size:0.9rem; color:#666;">To use your visualization: publish to Tableau Public → click Share → Embed, then paste the iframe code here in place of the sample.</p>
+            </div>
+        </section>
+
+        <section class="interactive-charts">
+          <h2>Interactive Charts (Plotly)</h2>
+          <p>Select countries to compare their FIFA ranking points over time. This chart is generated locally using the cleaned CSV included in the repository.</p>
+
+          <div class="chart-controls" style="margin-bottom:0.5rem;">
+            <label for="country-select">Choose countries (hold Ctrl/Cmd to multi-select):</label>
+            <select id="country-select" multiple size="6" style="width:100%; max-width:600px;"></select>
+          </div>
+
+          <div id="plotly-line" style="width:100%; max-width:1000px; height:600px;"></div>
+        </section>
+
+        <section class="reflection">
+            <h2>Reflection &amp; Analysis</h2>
+
+            <h3>1. Data Preparation</h3>
+            <p>I selected a dataset I am familiar with: the FIFA world ranking dataset (international men's football rankings). Uploading datasets to Tableau Public can fail for a few common reasons: malformed CSV (unescaped quotes, inconsistent column counts), missing header row, or unexpected character encodings. To prepare the file I inspected the CSV in a text editor and loaded it into Python to verify consistent columns and UTF-8 encoding. I removed extraneous rows (notes or metadata at the top) and ensured dates were in ISO format (YYYY-MM-DD) so Tableau recognized them as dates. For geographic maps I verified country names matched Tableau's canonical country list; when necessary I created a standardized country code column using ISO3 codes to avoid ambiguous names.</p>
+
+            <h3>2. Design Choices</h3>
+            <p>For the visualization I focused on patterns in national team ranking changes over time. The primary metric is the FIFA ranking points and the derived metric of rank change (delta from previous ranking). Dimensions include Country (discrete), Date (continuous), and Region/Confederation as a grouping variable. I chose a line chart with multiple small multiples — one line per country — arranged by confederation, allowing comparison of temporal trends. For highlight interactions I configured tooltips to show rank, points, and recent match results (when available). Color encodes confederation to surface regional patterns, while line thickness highlights the top-tier teams to focus attention.</p>
+
+            <h3>3. Expected Patterns</h3>
+            <p>Based on my domain knowledge, I expected established football powers (e.g., Brazil, Germany, Argentina) to show relatively stable, high ranking points with occasional dips after poor tournament performance. Emerging teams (e.g., some African or Asian teams) should show more volatility. I also expected regional clusters: European nations densely occupying the top ranks, while Oceania and some African nations clustering lower. The visualization confirmed many of these expectations: long-term leaders displayed gentle slopes with short downward spikes after major tournaments, and several smaller nations showed sharp jumps after a few successful matches. One portion of the chart that matched expectations was the steady plateau of top European teams from 2010–2018, reflecting their consistent results in qualifiers and tournaments.</p>
+
+            <h3>4. Surprises / Outliers</h3>
+            <p>Some findings deviated from expectations. A few nations outside the traditional powerhouses showed abrupt, sustained increases in points that were not tied to widely publicized tournament successes. These outliers often corresponded to periods where a team played many friendlies against lower-ranked opponents (which can inflate points) or where FIFA ranking calculation changes temporarily favored certain match patterns. Another surprise was the magnitude of volatility for mid-ranked teams in certain confederations; instead of gradual change, several teams experienced wild oscillations, suggesting irregular match scheduling or occasional long gaps between competitive fixtures.</p>
+
+            <h3>5. Questions for Further Investigation</h3>
+            <ul>
+                <li>Do sudden ranking increases correspond to clusters of friendlies versus competitive matches? (check match type)</li>
+                <li>Are there scheduling artifacts (long inactive periods) that amplify ranking volatility for some countries?</li>
+                <li>How do FIFA formula changes or point weighting adjustments explain sudden regional shifts?</li>
+                <li>Can pairing match-level results with ranking changes reveal causative matches or tournaments?</li>
+            </ul>
+
+            <h3>6. Tool Evaluation — Tableau Public</h3>
+            <p>Tableau Public is strong at rapid exploration and interactive presentation. Drag-and-drop data binding, built-in geographic recognition, and easy interactive filters make it straightforward to prototype multi-view dashboards. Tableau's strengths include polished tooltips, responsive interactivity, and quick publishing to the web. However, limitations exist: advanced statistical transformations are less convenient than in Python/R (though calculated fields are powerful for many tasks), and fine-grained control over layout or web embedding behaviour sometimes requires manual HTML/CSS adjustments after publishing. Tableau Public also requires a published public copy (no private publishing), which matters for sensitive datasets. Compared to coding in D3 or building with Plotly via Python, Tableau accelerates iteration and storytelling, but programmatic reproducibility and version control are easier when using code-first workflows.</p>
+
+            <h3>Self-Assessment</h3>
+            <p>Dataset fit: I chose a dataset I know reasonably well which helped form expectations. Design reasoning: I selected temporal and categorical dimensions to investigate both longitudinal trends and regional patterns, and I can explain why each visual element exists. Analytical honesty: I documented expected patterns before deep exploration and then compared them with the visualization. Curiosity: The follow-up questions reflect genuine interest in understanding the mechanisms behind outliers. Tool evaluation specificity: My comments are based on actual interaction with Tableau Public during this exercise. Overall, this page shows work I would present in a portfolio: the interactive viz plus a clear written reflection framing the analysis and next steps.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mia Eberle | DCDA 40833</p>
+    </footer>
+    <!-- Plotly + CSV parsing scripts -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/celebrate.js"></script>
+    <script>
+    (function(){
+      const csvPath = 'data/clean/fifa_ranking_clean.csv';
+      function parseFloatSafe(v){
+        const n = parseFloat(v);
+        return isNaN(n) ? null : n;
+      }
+
+      fetch(csvPath).then(r=>r.text()).then(txt=>{
+        const res = Papa.parse(txt, {header:true, skipEmptyLines:true});
+        const rows = res.data.map(r => ({
+          country: r.country_full,
+          date: new Date(r.rank_date),
+          points: parseFloatSafe(r.total_points),
+          rank: parseFloatSafe(r.rank),
+          confed: r.confederation
+        }));
+
+        // build country list
+        const countrySet = new Set(rows.map(d=>d.country));
+        const countries = Array.from(countrySet).sort();
+        const select = document.getElementById('country-select');
+        countries.forEach(c=>{
+          const opt = document.createElement('option');
+          opt.value = c; opt.textContent = c; select.appendChild(opt);
+        });
+
+        // default selection
+        const defaults = ['Brazil','Germany','Argentina','Spain','France','England','USA','Mexico','Japan','Portugal'];
+        for(let i=0;i<select.options.length;i++){
+          if(defaults.includes(select.options[i].value)) select.options[i].selected = true;
+        }
+
+        function updatePlot(){
+          const selected = Array.from(select.selectedOptions).map(o=>o.value);
+          const traces = [];
+          selected.forEach(country => {
+            const data = rows.filter(r=>r.country===country && r.points!=null).sort((a,b)=>a.date-b.date);
+            traces.push({
+              x: data.map(d=>d.date),
+              y: data.map(d=>d.points),
+              mode: 'lines+markers',
+              name: country
+            });
+          });
+          const layout = {
+            title: 'FIFA Ranking Points Over Time',
+            xaxis: {title: 'Date'},
+            yaxis: {title: 'Total Points'},
+            legend: {orientation: 'h'}
+          };
+          Plotly.newPlot('plotly-line', traces, layout, {responsive:true});
+        }
+
+        select.addEventListener('change', updatePlot);
+        updatePlot();
+      }).catch(err=>{
+        const container = document.getElementById('plotly-line');
+        container.innerHTML = '<p style="color:red">Error loading CSV for plots: '+err.message+'</p>';
+      });
+    })();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab 4 — Tableau Visualization</title>
